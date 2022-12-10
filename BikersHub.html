@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--ng-app directive tells AngularJS that myApp
+	is the root element of the application -->
+<html ng-app="myApp">
+	<head>
+		<!--import the angularjs libraries-->
+		<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js">
+	</script>
+		<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js">
+	</script>
+
+<style type="text/css">
+    body{background-color:#e8e8e8; color:#000000;margin:0}
+    header {background-color:#1a276d;}
+    h1 {color: #ffffff; font-family:Verdana; font-size:24px; text-align:center;}
+    h2 {font-family:Arial; font-size:18px; clear:both;}
+    p {font-family:Arial; line-height:200%;}
+    img {border:2px solid; margin:10px; padding:4px; max-width:100%;}
+    ul {float:left;}
+    footer {background-color:#1a276d; color:white; clear:both; text-align:center;}
+    div {background-color:#D4D6D9; margin:6px; padding:4px;}
+   a{ background-color: #1a276d;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;}
+  input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+</style>
+	</head>
+
+
+	<body>
+        <header><h1>Biker's Hub</h1></header>
+        <!--ng-template indicates the pages
+            that get loaded as per requirement-->
+        <script type="text/ng-template"
+                id="home.html">
+            <h1 style="color:green">Home</h1>
+            <h2 >
+                Welcome to Biker's Hub
+            </h2>
+            <img height="350" width="450" src="https://wallpapercave.com/wp/wp4655434.jpg">
+            <img height="350" width="450" src="https://images.unsplash.com/photo-1561053659-12b208af087a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80">
+            <img height="350" width="450" src="https://i.pinimg.com/originals/d5/59/1c/d5591c640450f09a738c03a697947b91.jpg">
+            <h3>{{message}}</h3>
+        </script>
+
+
+		<script type="text/ng-template"
+				id="hero.html">
+			<h1 style="color:red">Hero MotoCorp</h1>
+            <p> Hero MotoCorp Limited, formerly Hero Honda, is an Indian multinational motorcycle and scooter manufacturer based
+                 in New Delhi, India. The company is the largest two-wheeler manufacturer in the world and also in India, 
+                 where it has a market share of about 46% in the two-wheeler category.
+                In India Hero MotoCorp is currently selling 15 products . Their lineup includes Commuter bikes like Splendor, 
+                Moped like Maestro and Sports bike like Xpulse.</p>
+			<h2>
+				List of Products :<br><br>1) Xtreme 160 R BS6     &nbsp;&nbsp;&nbsp;&nbsp;      2) Xpulse 200 BS6 &nbsp;&nbsp;&nbsp;&nbsp;
+				3) Passion Pro BS6 &nbsp;&nbsp;&nbsp;&nbsp; 4) Splendor iSmart BS6 &nbsp;&nbsp;&nbsp;&nbsp; 5) Glamour BS6 &nbsp;&nbsp;&nbsp;&nbsp;
+				6) Splendor+ BS6 &nbsp;&nbsp;&nbsp;&nbsp; 7) HF Deluxe BS6<br><br> 8) Super Splendor BS6 &nbsp;&nbsp;&nbsp;&nbsp;
+				9) Destini 125 BS6 &nbsp;&nbsp;&nbsp;&nbsp; 10) Maestro Edge 125 BS6 &nbsp;&nbsp;&nbsp;&nbsp; 11) Pleasure + BS6
+				&nbsp;&nbsp;&nbsp;&nbsp; 12) Xpulse 200 T &nbsp;&nbsp;&nbsp;&nbsp; 13) Xtreme 200 S
+
+			</h2>
+			<h3>{{message}}</h3>
+		</script>
+
+		<script type="text/ng-template"
+				id="honda.html">
+			<h1 style="color:red">Honda 2 Wheelers India</h1>
+            <p> The Honda Motor Company, Ltd. is a Japanese public multinational conglomerate manufacturer of automobiles,
+                 motorcycles, and power equipment, headquartered in Minato, Tokyo, Japan.<br>
+                Honda is having more than 20 products in their line up. Their line up includes Commuter bikes like CD110 ,
+                Moped like Activa , Tourer like CB350RS , Sports Bike like CBR 650 and Super Bikes like CBR Fire Blade(CBR 1000 RR-R) </p>
+
+			<h2 >
+				List of Products :<br><br>1) CD 110     &nbsp;&nbsp;&nbsp;&nbsp;      2) SP 125 &nbsp;&nbsp;&nbsp;&nbsp;
+				3) CB Shine  &nbsp;&nbsp;&nbsp;&nbsp; 4) Unicorn  &nbsp;&nbsp;&nbsp;&nbsp; 5) Livo &nbsp;&nbsp;&nbsp;&nbsp;
+				6) XBlade &nbsp;&nbsp;&nbsp;&nbsp; 7) Hornet 2.0 &nbsp;&nbsp;&nbsp;&nbsp; 8) Grazia 125 &nbsp;&nbsp;&nbsp;&nbsp;
+				9) Activa 125  &nbsp;&nbsp;&nbsp;&nbsp; 10) Activa 6G &nbsp;&nbsp;&nbsp;&nbsp; 11) Dio<br> <br>
+			    12) CB 650 R  &nbsp;&nbsp;&nbsp;&nbsp; 13) 500 X &nbsp;&nbsp;&nbsp;&nbsp; 14) CB 350 RS &nbsp;&nbsp;&nbsp;&nbsp;
+				15) Hness 350 &nbsp;&nbsp;&nbsp;&nbsp; 16) CBR 650 R &nbsp;&nbsp;&nbsp;&nbsp; 17) CB 1000 R &nbsp;&nbsp;&nbsp;&nbsp;
+				18) CBR FireBlade &nbsp;&nbsp;&nbsp;&nbsp; 19) Africa Twin 
+
+			</h2>
+			<h3>{{message}}</h3>
+		</script>
+
+        <script type="text/ng-template"
+				id="kawasaki.html">
+			<h1 style="color:green">Kawasaki Racing Team</h1>
+            <p> Kawasaki motorcycles are manufactured by the Motorcycle & Engine division of Kawasaki Heavy Industries at plants in Japan,
+                 Michigan, Philippines, India, Indonesia, Bangladesh and Thailand.<br>
+                 Kawasaki is having more than 15 products in their line up. Kawasaki produces bikes with  more than 200 cc engines .
+                 Their line up includes Tourer like w800 , Sports bikes like Ninja 300 , And the beast  Nija H2.</p>
+			<h2 >
+				List Of Products:<br><br> 1) Ninja H2 R &nbsp;&nbsp;&nbsp;&nbsp; 2) Ninja ZX-10 R &nbsp;&nbsp;&nbsp;&nbsp;
+				3) Ninja 1000 SX &nbsp;&nbsp;&nbsp;&nbsp; 4) Ninja 650 &nbsp;&nbsp;&nbsp;&nbsp; 5) Ninja 300
+				&nbsp;&nbsp;&nbsp;&nbsp; 6) Z H2 &nbsp;&nbsp;&nbsp;&nbsp; 7) Z H2 SE &nbsp;&nbsp;&nbsp;&nbsp; 8) Z 900 &nbsp;&nbsp;&nbsp;&nbsp;
+				9) Z 650 &nbsp;&nbsp;&nbsp;&nbsp; 10) Vulcan S &nbsp;&nbsp;&nbsp;&nbsp; 11) Versys 1000 <br><br> 12) Versys 650 
+				&nbsp;&nbsp;&nbsp;&nbsp; 13) W800
+			</h2>
+            
+			<h3>{{message}}</h3>
+		</script>
+
+        <script type="text/ng-template"
+				id="bmw.html">
+			<h1 style="color:blue">BMW Motorrad</h1>
+            <p> BMW Motorrad is the motorcycle brand of the German company BMW, part of its Corporate and Brand Development division.
+                It has produced motorcycles since 1923, and achieved record sales for the fifth year in succession in 2015. 
+                With a total of 136,963 vehicles sold in 2015, BMW registered a growth of 10.9% in sales in comparison with 2014.
+                In May 2011, the 2,000,000th motorcycle produced by BMW Motorrad was an R1200GS.
+                BMW is having  15 products in their line up. BMW produces bikes with  more than 300cc engines .
+                Their line up includes Tourer like R18 , Sports bikes like G310 R  , And the Most Beautiful S1000RR.
+
+
+            </p>
+			<h2>
+				List Of Products:<br><br> 1) S 1000 RR &nbsp;&nbsp;&nbsp;&nbsp; 2) M 1000 RR &nbsp;&nbsp;&nbsp;&nbsp;
+				3) R1250 R &nbsp;&nbsp;&nbsp;&nbsp; 4) F900 R &nbsp;&nbsp;&nbsp;&nbsp; 5) G 310 R &nbsp;&nbsp;&nbsp;&nbsp;
+				6) R 18 &nbsp;&nbsp;&nbsp;&nbsp; 7) R 18 Classic &nbsp;&nbsp;&nbsp;&nbsp;8) R nineT &nbsp;&nbsp;&nbsp;&nbsp;
+				9) R nineT Scrambler &nbsp;&nbsp;&nbsp;&nbsp; 10) S 1000 XR <br><br> 11) F 900 XR &nbsp;&nbsp;&nbsp;&nbsp;
+				12) R 1250 GS Adventure &nbsp;&nbsp;&nbsp;&nbsp;13) R 1250 GS &nbsp;&nbsp;&nbsp;&nbsp; 14) G 310 GS 
+				&nbsp;&nbsp;&nbsp;&nbsp; 
+			</h2>
+			<h3>{{message}}</h3>
+		</script>
+
+        <script type="text/ng-template"
+				id="ktm.html">
+			<h1 style="color:#fa6909">KTM Racing</h1>
+            <p>KTM AG (formerly KTM Sportmotorcycle AG[4][5]) is an Austrian motorcycle and sports car
+                 manufacturer owned by Pierer Mobility AG and Indian manufacturer Bajaj Auto.
+                  It was formed in 1992 but traces its foundation to as early as 1934. Today, KTM AG is 
+                  the parent company of the KTM Group, consisting of a number of motorcycle brands.
+                  KTM is having  9 products in their line up. 
+                  Their line up includes Adventure  like KTM Adventure 250 , Sports bikes like KTM RC 390.
+
+
+            </p>
+			<h2>
+				List Of Products:<br> <br> 1) KTM 125 Duke &nbsp;&nbsp;&nbsp;&nbsp; 2) KTM RC 125 &nbsp;&nbsp;&nbsp;&nbsp;
+				3) KTM 200 Duke &nbsp;&nbsp;&nbsp;&nbsp; 4) KTM RC 200 &nbsp;&nbsp;&nbsp;&nbsp; 5) KTM 250 Duke 
+				&nbsp;&nbsp;&nbsp;&nbsp; 6) KTM RC 390 &nbsp;&nbsp;&nbsp;&nbsp; 7) KTM 390 Duke <br><br>
+				8) KTM 390 Adventure &nbsp;&nbsp;&nbsp;&nbsp; 9) KTM 250 Adventure
+			</h2>
+			<h3>{{message}}</h3>
+		</script>
+
+		<!--hyperlinks to load different
+			pages dynamically-->
+        <div>   
+          <table>  
+              
+		<th><hr><a href="#/">Home</a></hr>  </th>
+		<th><hr><a href="#/hero">Hero</a></hr></th>
+		<th><hr><a href="#/honda">Honda</a></hr></th>
+        <th><hr><a href="#/kawasaki">Kawasaki</a></hr></th>
+        <th><hr><a href="#/BMW">BMW</a></hr></th>
+        <th><hr><a href="#/ktm">KTM</a></hr></th>
+        
+        </table>
+        </div>
+    
+		<!--ng-view includes the rendered template of
+			the current route into the main page-->
+		<div ng-view></div>
+		<script>
+			var app = angular.module('myApp', []);
+			var app = angular.module('myApp', ['ngRoute']);
+			app.config(function($routeProvider) {
+			$routeProvider
+
+			.when('/', {
+			templateUrl : 'home.html',
+			controller : 'FirstController'
+			})
+
+			.when('/hero', {
+			templateUrl : 'hero.html',
+			controller : 'SecondController'
+			})
+
+			.when('/honda', {
+			templateUrl : 'honda.html',
+			controller : 'ThirdController'
+			})
+
+            .when('/kawasaki', {
+			templateUrl : 'kawasaki.html',
+			controller : 'ForthController'
+			})
+
+            .when('/BMW', {
+			templateUrl : 'bmw.html',
+			controller : 'FifthController'
+			})
+
+            .when('/ktm', {
+			templateUrl : 'ktm.html',
+			controller : 'SixthController'
+			})
+
+			.otherwise({redirectTo: '/'});
+			});
+
+	
+
+			app.controller('FirstController', function($scope) {
+			$scope.message = 'This Website is for peoples who loves Bikes. We update regularly about new bikes coming in the market.If you are planning to buy a new bike then please make sure you had seen our post related bikes';
+			});
+
+			app.controller('SecondController', function($scope) {
+			$scope.message = "copyright@Biker's Hub";
+			});
+
+			app.controller('ThirdController', function($scope) {
+			$scope.message = "copyright@Biker's Hub";
+			});
+
+            
+			app.controller('ForthController', function($scope) {
+			$scope.message = "copyright@Biker's Hub";
+			});
+            
+			app.controller('FifthController', function($scope) {
+			$scope.message = "copyright@Biker's Hub";
+			});
+            
+			app.controller('SixthController', function($scope) {
+			$scope.message = "copyright@Biker's Hub";
+			});
+		</script>
+        <footer><h1>For more Details Contact us on Social Media or Call us on 9876543210</h1></footer>
+	</body>
+</html>
